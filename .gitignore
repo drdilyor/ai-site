@@ -1,0 +1,9 @@
+.*.swp
+.idea
+.vscode
+
+.sass-cache
+*.log
+node_modules
+
+ai-site.zip

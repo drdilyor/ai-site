@@ -1,0 +1,262 @@
+$primary: #3A68B8;
+$body-bg: #020A18;
+$body-color: #FFFFFF;
+$font-family: Open Sans, sans-serif;
+
+$navbar-padding-y: 1.3em;
+$navbar-brand-padding-y: 0;
+
+$btn-padding-y: 15px;
+$btn-padding-x: $btn-padding-y * 2;
+$btn-line-height: 1;
+$btn-font-weight: 600;
+
+$btn-padding-y-lg: $btn-padding-y;
+$btn-padding-x-lg: $btn-padding-x;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1136px,
+  xxl: 1136px,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($grid-breakpoints, $name)) {
+    @content
+  }
+}
+
+@include breakpoint(lg) {
+  .navbar-brand {
+    margin-right: 84px;
+  }
+}
+
+html, body {
+  /* aos scroll */
+  overflow-x: hidden;
+}
+
+.nav-item {
+  margin-right: 2.5em;
+  font-weight: 600;
+}
+
+.nav-item .btn {
+  font-size: 16px;
+}
+
+.caps-head {
+  color: $primary;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/***** layout */
+.page {
+  font-weight: 600;
+  line-height: 1.6;
+  @media screen and (max-width: map-get($grid-breakpoints, xl) - .1px) {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    &-img, &-content {
+      padding-bottom: 4em;
+    }
+  }
+}
+
+@include breakpoint(xxl) {
+  .page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-img {
+      flex: 0;
+    }
+    &-content {
+      flex: 1;
+      padding: 0;
+      padding-right: 4em;
+    }
+    &-img-right > &-img {
+      width: 400px;
+    }
+    &-img-left > &-img {
+      margin-left: -200px;
+    }
+  }
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-weight: 800;
+  font-size: 55px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h4 {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+p {
+  color: rgba(255, 255, 255, .75);
+  margin-bottom: 0;
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+.header {
+  padding-top: 50px;
+}
+.header .btn-lg {
+  height: 57px;
+}
+
+.hero-container {
+  padding: 100px 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(xl) {
+    flex-direction: row;
+  }
+  
+  > img {
+    display: block;
+    margin-bottom: 2em;
+    @include breakpoint(xl) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.apply-container {
+  padding: 130px 0;
+}
+
+@include breakpoint(md) {
+  .features {
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(20%);
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-20%);
+    }
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
+.features {
+  @include breakpoint(xl) {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 65px;
+  }
+}
+
+.feature-card {
+  width: 18em;
+  margin: 0 auto 20px;
+  @include breakpoint(xl) {
+    width: 19%;
+    margin: 0;
+  }
+  padding: 30px;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) -41.9%, rgba(255, 255, 255, 0.1) 115.68%);
+  border-radius: 10px;
+  text-align: center;
+  
+  > figure {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+  }
+}
+
+.about {
+  padding: {
+    top: 170px;
+    bottom: 170px;
+  }
+}
+
+.about p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer {
+  padding: 77px 0 150px;
+}
+
+.dropdown-menu {
+  background: $body-bg;
+  border: 1px solid #444;
+  box-shadow: 0 .5em 1em #222;
+}
+.dropdown-item {
+  color: $body-color;
+}
+
+address {
+  &, p {
+    color: white;
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: 20px !important;
+  }
+  
+}
+
+footer {
+  h5 {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, .75);
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.footer-icon {
+  margin-right: 1.5em;
+}

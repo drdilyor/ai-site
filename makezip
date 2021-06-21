@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+rm ai-site.zip
+zip ai-site.zip index.html css/* img/* \
+  node_modules/@popperjs/core/dist/umd/popper.min.js \
+  node_modules/bootstrap/dist/js/bootstrap.min.js \
+  node_modules/aos/dist/aos.css \
+  node_modules/aos/dist/aos.js
